@@ -1,0 +1,3 @@
+<?php require 'layout.php'; userStart('Order Details','orders'); ?>
+<div class="container"><div class="page-head"><h1>Order #1001</h1><p>Order details and delivery information.</p></div><div class="two-col"><div class="card"><h3>Products</h3><div class="cart-row"><img src="/SurgicalStore/images/surgical-gloves.jpg"><div><strong>Surgical Gloves</strong><br>Qty: 5</div><strong>₹1,250</strong></div><div class="cart-row"><img src="/SurgicalStore/images/face-mask.jpg"><div><strong>Face Mask</strong><br>Qty: 10</div><strong>₹1,200</strong></div></div><div class="summary"><h3>Delivery</h3><p>Rahul Patel</p><p>Rajkot, Gujarat</p><br><span class="badge success">Delivered</span></div></div></div>
+<?php userEnd(); ?>

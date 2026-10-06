@@ -1,0 +1,3 @@
+<?php require 'layout.php'; userStart('Wishlist',''); ?>
+<div class="container"><div class="page-head"><h1>My Wishlist</h1><p>Products you may want to purchase later.</p></div><div class="card"><p>Your wishlist is stored in this browser. Add products using the <i class="bi bi-heart"></i> button on the Products page.</p><br><a class="btn primary" href="products.php">Browse Products</a></div></div>
+<?php userEnd(); ?>

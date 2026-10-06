@@ -1,0 +1,3 @@
+<?php require 'layout.php'; userStart('Product Details','products'); ?>
+<div class="container"><div class="page-head"><h1>Product Details</h1><p>Product information.</p></div><div class="two-col"><div class="card"><img src="/SurgicalStore/images/bp-monitor.jpg" style="width:100%;max-height:420px;object-fit:contain;border-radius:10px"></div><div class="card"><span class="category">Equipment</span><h1>BP Monitor</h1><p>Digital blood pressure monitor suitable for regular home monitoring.</p><h2 class="price">₹1,850</h2><br><button class="btn primary" onclick="addToCart('p1','BP Monitor',1850,'/SurgicalStore/images/bp-monitor.jpg')">Add to Cart</button></div></div></div>
+<?php userEnd(); ?>

@@ -1,0 +1,1 @@
+<?php require 'layout.php'; userStart('Cancel Order','orders'); ?><div class="container"><div class="card"><h2>Cancel Order</h2><p>Demo order cancellation page.</p><br><a class="btn" href="orders.php">Back to Orders</a></div></div><?php userEnd(); ?>

@@ -1,0 +1,3 @@
+<?php require 'layout.php'; userStart('Order Success','orders'); ?>
+<div class="container"><div class="card" style="max-width:650px;margin:60px auto;text-align:center"><div style="font-size:55px"><i class="bi bi-check"></i></div><h1>Order Placed Successfully!</h1><p>Thank you for shopping with Surgical Store. Your demo order has been confirmed.</p><br><a class="btn primary" href="orders.php">View My Orders</a> <a class="btn" href="products.php">Continue Shopping</a></div></div>
+<?php userEnd(); ?>
