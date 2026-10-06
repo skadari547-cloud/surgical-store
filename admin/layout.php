@@ -56,6 +56,8 @@ function adminStart($pageTitle = 'Admin Dashboard', $activePage = '')
             <a href="suppliers.php" class="<?= $activePage === 'suppliers' ? 'active' : '' ?>"><i class="bi bi-truck"></i> <span>Suppliers</span></a>
             <a href="sales-report.php" class="<?= $activePage === 'sales' ? 'active' : '' ?>"><i class="bi bi-graph-up"></i> <span>Sales Report</span></a>
             <a href="stock-report.php" class="<?= $activePage === 'stock' ? 'active' : '' ?>"><i class="bi bi-clipboard-data"></i> <span>Stock Report</span></a>
+            <a href="coupons.php" class="<?= $activePage === 'coupons' ? 'active' : '' ?>"><i class="bi bi-ticket-perforated"></i> <span>Coupons</span></a>
+            <a href="delivery-services.php" class="<?= $activePage === 'delivery' ? 'active' : '' ?>"><i class="bi bi-lightning-charge"></i> <span>Delivery Services</span></a>
 
             <div class="menu-title">ACCOUNT</div>
             <a href="profile.php" class="<?= $activePage === 'profile' ? 'active' : '' ?>"><i class="bi bi-person"></i> <span>Profile</span></a>

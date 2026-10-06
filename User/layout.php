@@ -1,61 +1,10 @@
 <?php
-/*
-    COMMON USER LAYOUT
-    Every logged-in/customer page uses this file.
-    No database is required. Demo cart/wishlist values are stored in the browser.
-*/
-function userStart($pageTitle = 'Surgical Store', $activePage = '')
-{
-    if (session_status() === PHP_SESSION_NONE) session_start();
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($pageTitle) ?> | Surgical Store</title>
-    <link rel="stylesheet" href="/SurgicalStore/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-</head>
-<body>
-<div class="top-bar"><div class="container"><i class="bi bi-truck"></i> Free home delivery on orders above ₹999 <span> | </span> Secure online purchase</div></div>
-
-<header class="site-header">
-    <div class="container nav-wrap">
-        <a class="logo" href="index.php"><span class="logo-icon">SS</span> Surgical<span>Store</span></a>
-        <button class="menu-btn" onclick="toggleMenu()"><i class="bi bi-list"></i></button>
-        <nav id="mainNav">
-            <a class="<?= $activePage==='home'?'active':'' ?>" href="index.php">Home</a>
-            <a class="<?= $activePage==='products'?'active':'' ?>" href="products.php">Products</a>
-            <a class="<?= $activePage==='categories'?'active':'' ?>" href="categories.php">Categories</a>
-            <a class="<?= $activePage==='orders'?'active':'' ?>" href="orders.php">My Orders</a>
-        </nav>
-        <div class="nav-actions">
-            <a href="wishlist.php" title="Wishlist"><i class="bi bi-heart"></i></a>
-            <a href="cart.php" title="Cart"><i class="bi bi-cart3"></i><b id="cartCount">0</b></a>
-            <a href="profile.php" title="Profile"><i class="bi bi-person"></i></a>
-        </div>
-    </div>
-</header>
-
-<main>
-<?php
-}
-function userEnd()
-{
-?>
-</main>
-<footer class="footer">
-    <div class="container footer-grid">
-        <div><a class="logo footer-logo" href="index.php"><span class="logo-icon">SS</span> Surgical<span>Store</span></a><p>Reliable surgical and healthcare products delivered to your doorstep.</p></div>
-        <div><h4>Quick Links</h4><a href="products.php">Products</a><a href="categories.php">Categories</a><a href="orders.php">My Orders</a></div>
-        <div><h4>Account</h4><a href="profile.php">Profile</a><a href="change-password.php">Change Password</a><a href="logout.php">Logout</a></div>
-        <div><h4>Support</h4><p><i class="bi bi-telephone"></i> +91 98765 43210</p><p><i class="bi bi-envelope"></i> support@surgicalstore.com</p></div>
-    </div>
-    <div class="copyright">© <?= date('Y') ?> Surgical Store. All rights reserved.</div>
-</footer>
-<script src="/SurgicalStore/js/script.js"></script>
-<script src="/SurgicalStore/js/validation.js"></script>
-</body>
-</html>
-<?php } ?>
+function userStart($pageTitle='Surgical Store',$activePage='') { if(session_status()===PHP_SESSION_NONE) session_start(); ?>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title><?= htmlspecialchars($pageTitle) ?> | Surgical Store</title><link rel="stylesheet" href="/SurgicalStore/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></head><body>
+<div class="announcement"><div class="container announcement-inner"><span><i class="bi bi-truck"></i> Free delivery above ₹999</span><span><i class="bi bi-lightning-charge"></i> Urgent delivery service available</span><span><i class="bi bi-headset"></i> +91 98765 43210</span></div></div>
+<header class="site-header"><div class="container nav-wrap"><a class="logo" href="index.php"><span class="logo-icon"><i class="bi bi-heart-pulse-fill"></i></span><span>Surgical<span>Store</span></span></a><button class="menu-btn" onclick="toggleMenu()"><i class="bi bi-list"></i></button>
+<nav id="mainNav"><a class="<?= $activePage==='home'?'active':'' ?>" href="index.php">Home</a><a class="<?= $activePage==='products'?'active':'' ?>" href="products.php">Products</a><a class="<?= $activePage==='categories'?'active':'' ?>" href="categories.php">Categories</a><a class="<?= $activePage==='offers'?'active':'' ?>" href="offers.php">Offers</a><a class="<?= $activePage==='services'?'active':'' ?>" href="services.php">Services</a><a class="<?= $activePage==='orders'?'active':'' ?>" href="orders.php">My Orders</a><a class="<?= $activePage==='about'?'active':'' ?>" href="about.php">About</a><a class="<?= $activePage==='contact'?'active':'' ?>" href="contact.php">Contact</a></nav>
+<div class="nav-actions"><a class="nav-icon" href="wishlist.php"><i class="bi bi-heart"></i><span class="nav-count" id="wishCount">0</span></a><a class="nav-icon" href="cart.php"><i class="bi bi-cart3"></i><span class="nav-count" id="cartCount">0</span></a><a class="nav-icon" href="profile.php"><i class="bi bi-person-circle"></i></a></div></div></header><main>
+<?php }
+function userEnd(){ ?><section class="newsletter"><div class="container newsletter-inner"><div><span class="eyebrow">STAY INFORMED</span><h2>Get useful product updates & offers</h2><p>Receive occasional updates about new healthcare essentials and store offers.</p></div><form class="newsletter-form" onsubmit="subscribeNewsletter(event)"><input type="email" placeholder="Your email address" required><button class="btn primary" type="submit">Subscribe <i class="bi bi-arrow-right"></i></button></form></div></section>
+<footer class="footer"><div class="container footer-grid"><div><a class="footer-brand" href="index.php"><span class="logo-icon"><i class="bi bi-heart-pulse-fill"></i></span><span>Surgical<span>Store</span></span></a><p>Reliable surgical and healthcare products with a simple shopping experience.</p></div><div><h4>Shop</h4><a href="products.php">Products</a><a href="categories.php">Categories</a><a href="offers.php">Offers</a><a href="services.php">Services</a></div><div><h4>Account</h4><a href="profile.php">Profile</a><a href="orders.php">My Orders</a><a href="wishlist.php">Wishlist</a><a href="change-password.php">Security</a></div><div><h4>Support</h4><p><i class="bi bi-telephone"></i> +91 98765 43210</p><p><i class="bi bi-envelope"></i> support@surgicalstore.com</p><p><i class="bi bi-geo-alt"></i> Rajkot, Gujarat</p></div></div><div class="copyright">© <?= date('Y') ?> Surgical Store. All rights reserved. <span>Demo / academic frontend</span></div></footer><script src="/SurgicalStore/js/script.js"></script><script src="/SurgicalStore/js/validation.js"></script></body></html><?php } ?>
